@@ -1,0 +1,6 @@
+__pycache__/
+.Rproj.user/
+.Rhistory
+data/raw/
+output/
+.idea/
