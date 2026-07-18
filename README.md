@@ -1,108 +1,73 @@
 ﻿# 📊 鱼类生态数据分析项目
 
-> 基于数量生态学 10 大模块 + 综合工作流 + workspace 分析管线  
-> 整合 R/Python 生态分析工具，支持可复现研究
+> 本地已有数量生态学 10 模块 R 代码模板 + 5 综合工作流 + 分析约束速查
+> 配合 `/fish-data-analysis` 技能调用
 
 ---
 
-## 快速开始
+## 现有资料导航
 
-```bash
-# 入口命令（在 Reasonix 会话中）
-/fish-data-analysis
-```
+### 📂 R 代码模板（核心资产）
+位置：`docs/references/A-J 各模块/R代码/`
 
-## 项目结构
+| 模块 | R代码 | 深度详解 | 快速入口 |
+|------|-------|---------|---------|
+| A 数据预处理 | `数据预处理模板.R` | `深度详解.md` | 异常值/正态性/插补 |
+| B 多样性分析 | `多样性分析模板.R` | `深度详解.md` | Hill numbers/β分解/PD |
+| C 多元统计 | `多元统计分析模板.R` | `深度详解.md` | PCA/RDA/CCA/NMDS/PERMANOVA |
+| D 空间生态学 | `空间生态学模板.R` | `深度详解.md` | Moran's I/MEM/点格局 |
+| E 生态位与SDM | `生态位与SDM模板.R` | `深度详解.md` | MaxEnt/生态位重叠 |
+| F 网络分析 | `网络分析模板.R` | `深度详解.md` | igraph/bipartite |
+| G 时间序列 | `时间序列分析模板.R` | `深度详解.md` | ARIMA/CCM/早期预警 |
+| H 系统发育 | `系统发育分析模板.R` | `深度详解.md` | PGLS/系统发育信号 |
+| I 统计建模 | `统计建模与ML模板.R` | `深度详解.md` | GLM/GLMM/GAM/随机森林 |
+| J 模拟与随机化 | `模拟与随机化模板.R` | `深度详解.md` | 零模型/自举/IBM |
 
-```
-├── data/                          # 数据
-│   ├── raw/                       #   原始数据（只读）
-│   ├── processed/                 #   清洗后数据
-│   └── external/                  #   外部来源数据
-│
-├── src/                           # 源代码
-│   ├── R/                         #   R 分析函数
-│   └── python/                    #   Python 分析脚本
-│
-├── analyses/                      # 可复现分析报告（.Rmd）
-│
-├── config/                        # 配置文件
-│   └── analysis_config.yaml       #   分析参数配置
-│
-├── docs/                          # 文档
-│   ├── references/                #   参考资料
-│   │   ├── A-数据基础/            #     10个模块（R代码+深度详解）
-│   │   ├── B-多样性分析/
-│   │   ├── C-多元统计分析/
-│   │   ├── ...
-│   │   ├── 综合工作流/            #     5个完整分析管道
-│   │   ├── 诊断工具箱/            #     综合诊断R函数
-│   │   ├── 方法适用边界/          #     方法选择与约束
-│   │   ├── 快速速查表.md          #     核心阈值一页纸
-│   │   └── workspace脚本/         #     workspace分析管线
-│   ├── research_teams.md          #   研究团队与学者追踪
-│   └── online_resources.md        #   在线资源索引
-│
-├── output/                        # 输出产物
-│   ├── figures/                   #   图表
-│   ├── tables/                    #   表格
-│   └── reports/                   #   报告
-│
-├── tests/                         # 测试
-├── scripts/                       # 工具脚本
-├── .github/                       # CI/CD 配置
-│
-├── CHANGELOG.md                   # 变更日志
-├── LICENSE                        # MIT 许可证
-└── README.md                      # 本文件
-```
+### 📂 综合工作流（拿来即用）
+位置：`docs/references/综合工作流/`
 
-## 分析流程
+| 脚本 | 场景 | 方法串联 |
+|------|------|---------|
+| `W1_鱼类群落_环境梯度.R` | 鱼类-环境关系 | 预处理→多样性→RDA→VPA |
+| `W2_禁渔前后群落变化.R` | 禁渔效果评估 | β分解→PERMANOVA→指示种 |
+| `W3_功能多样性对干扰响应.R` | 干扰梯度 | FRic/FEve/FDiv→GAM |
+| `W4_物种分布对未来气候.R` | 气候影响 | MaxEnt→未来预测→迁移 |
+| `W5_食物网富营养化.R` | 营养级联 | igraph→网络稳健性 |
 
-### 标准工作流
+### 📂 分析辅助
 
-```mermaid
-graph LR
-    A[数据准备] --> B[探索性分析]
-    B --> C[方法选择]
-    C --> D[统计分析]
-    D --> E[可视化]
-    E --> F[报告输出]
-```
+| 资源 | 位置 | 说明 |
+|------|------|------|
+| 诊断工具箱 | `_诊断工具箱/诊断工具箱.R` | 一键诊断函数集 |
+| 快速速查表 | `快速速查表.md` | 核心阈值+致命错误 |
+| 方法决策树 | `Z-决策树/方法选择决策树.md` | 按数据特征选方法 |
+| 适用边界指南 | `_方法适用边界/适用边界与稳健性全面指南.md` | 30KB~完整指南 |
 
-### 方法选择路径
+### 📂 扩展知识
 
-```
-数据特征 → 决策树（docs/references/Z-决策树/）
-  → 梯度长度 < 3 SD → RDA（docs/references/C-多元统计分析/）
-  → 梯度长度 3-4 SD → CCA
-  → 梯度长度 > 4 SD → CA/DCA
-  → 组间比较 → PERMANOVA（含 betadisper 前置检验）
-  → 计数数据 → 过离散检测（>1.5 换负二项）
-  → 环境变量 → VIF 共线性诊断（>10 剔除）
-  → 空间数据 → Moran's I 空间自相关检验
-```
+| 文档 | 说明 |
+|------|------|
+| `docs/cs_math_foundations.md` | 计算机与数学跨学科知识 |
+| `docs/research_teams.md` | 学者/实验室/期刊追踪 |
+| `docs/online_resources.md` | 教程/数据/工具链接 |
+| `docs/source_verification.md` | 证据溯源规范 |
+| `docs/verification_report.md` | 全部信息来源核实结果 |
 
 ## 分析约束速查
 
-| 检查项 | 阈值 | 参考 |
-|--------|------|------|
-| VIF 共线性 | >10 剔除 | `docs/references/快速速查表.md` |
-| 过离散 (dispersion) | >1.5 换负二项 | `docs/references/I-统计建模与机器学习/` |
-| 相关系数 \|r\| | >0.7 删一个变量 | `docs/references/快速速查表.md` |
-| PERMANOVA 前置 | 必须做 betadisper | `docs/references/C-多元统计分析/` |
-| 残差空间自相关 | 必须检验 Moran's I | `docs/references/D-空间生态学/` |
-| 样本量 | 每参数≥10观测 | `docs/references/I-统计建模与机器学习/` |
-| RDA 样点数 | >变量数×3 | `docs/references/C-多元统计分析/` |
+| 检查 | 阈值 | 参考 |
+|------|------|------|
+| VIF | >10 剔除 | `快速速查表.md` |
+| 过离散 | >1.5 换负二项 | `I-统计建模/` |
+| \|r\| | >0.7 删变量 | `快速速查表.md` |
+| PERMANOVA | 先做 betadisper | `C-多元统计/` |
+| 空间自相关 | 检验 Moran's I | `D-空间生态学/` |
+| 样本量 | 每参数≥10 | `I-统计建模/` |
 
 ## 软件依赖
 
-- **R 4.6.0**: vegan, ade4, MASS, mgcv, nlme, lme4, sp, raster, terra, spdep, gstat, ggplot2, dplyr, corrplot 等
-- **Python 3.13**: pandas, numpy, scipy, matplotlib, seaborn, sklearn, statsmodels
-- **MCP 工具**: GBIF, FishBase, PubMed, CNKI, Europe PMC
+- **R 4.6.0** — 27个已核实包（vegan/ade4/lme4/mgcv/spdep等）
+- **Python 3.13** — pandas/scipy/sklearn/statsmodels
+- **ArcGIS Desktop 10.8** — 含 ArcPy
 
-## 发布规范
-
-- 🗺️ 物种分布图须含九段线
-- 📝 出版前申请审图号
-- 🐟 已有 shp 数据（D:\ArcGIS\）边界合规
+> 需要数据分析时，直接输入 `/fish-data-analysis` 调出技能
