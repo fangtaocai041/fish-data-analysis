@@ -52,20 +52,21 @@
 | Gelman et al (2013) *Bayesian Data Analysis* 3ed | ISBN 978-1-4398-4095-5 | ✅ 核实 |
 
 **结论：8/8 全部核实，有DOI/ISBN可查。** ✅
+> 📖 **《Numerical Ecology》第3版 (ISBN 978-0-444-53868-0)** 已确认为本项目方法论的权威主参考
 
 ## 三、在线资源URL核实
 
 | 资源 | URL | 状态 |
 |------|-----|------|
 | vegan文档 | vegandevs.github.io/vegan/ | ✅ 200 OK |
-| FSA文档 | fishr-core-team.github.io/FSA/ | ⚠️ 超时（GitHub Pages） |
-| FishR教程 | derekogle.com/fishR/ | ✅ 200 OK（正在迁移） |
+| FSA文档 | fishr-core-team.github.io/FSA/ | ✅ 200 OK（FSA 0.10.1） |
+| FishR教程 | derekogle.com/fishR/ | ✅ 200 OK（已迁至fishr-core-team） |
 | rspatial教程 | rspatial.org | ✅ 200 OK |
 | BES Methods Blog | methodsblog.com | ✅ 200 OK |
 | 生态数据维基 | ecologicaldata.org | ✅ 200 OK |
 | SORTEE | sortee.org | ✅ 200 OK |
 | EFI | ecoforecast.org | ✅ 200 OK |
-| rOpenSci | ropensci.org | ⚠️ Cloudflare拦截（需JS） |
+| rOpenSci | ropensci.org | ⚠️ Cloudflare拦截（需浏览器访问） |
 | NEON学习中心 | neonscience.org/learning-hub | ✅ 200 OK |
 
 **结论：8/10 可直接访问，2个因网络环境原因暂时不可达。**
