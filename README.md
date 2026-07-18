@@ -3,8 +3,11 @@
 > 本地已有数量生态学 10 模块 R 代码模板 + 5 综合工作流 + 分析约束速查
 > 配合 `/fish-data-analysis` 技能调用
 >
-> 📖 **权威主参考**: Legendre & Legendre (2012) *Numerical Ecology* 3rd ed., Elsevier
-> — 各模块方法均以此书的分类和术语为准
+> 📖 **权威主参考**: 
+> 1. **理论**: Legendre & Legendre (2012) *Numerical Ecology* 3rd ed., Elsevier
+> 2. **R实践**: Borcard, Gillet & Legendre (2018/2020) *Numerical Ecology with R* 2nd ed.  
+>    → 中文版：赖江山译《数量生态学——R语言的应用》第2版，高教社，ISBN 978-7-04-053950-9
+> — 各模块方法均以此两书的分类和术语为准
 
 ---
 
@@ -71,7 +74,10 @@
 
 ## 全书章节与模块对照
 
-> 以下为 *Numerical Ecology* 3rd ed. (Legendre & Legendre 2012) 全书章节与项目10模块的映射
+> 以下为 *Numerical Ecology* (Legendre & Legendre 2012) 全书章节与项目10模块的映射
+> 📄 **中文版 PDF**: `D:\Reasonix\fangtao_library\方陶文库\06-数据库\个人文献库\书籍与教材\海洋渔业\数量生态学  第3版_14543196.pdf`
+> 📄 **R实践中文版**: 赖江山译《数量生态学——R语言的应用》第2版 (ISBN 978-7-04-053950-9)
+> 需要查具体内容时直接打开 PDF 搜索对应章节即可
 
 | 书章 | 书名 | 对应模块 | 项目位置 |
 |------|------|---------|---------|
