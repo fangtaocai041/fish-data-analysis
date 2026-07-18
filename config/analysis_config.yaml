@@ -1,0 +1,8 @@
+# 分析配置文件
+data:
+  raw: data/raw/
+  processed: data/processed/
+analysis:
+  seed: 42
+  permutation: 999
+  vif_threshold: 10
